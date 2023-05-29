@@ -22,6 +22,7 @@ async function handleRequest(request) {
 }
 
 
+<<<<<<< HEAD
 // export default {
 //   async fetch(request, env) {
 //     const url = new URL(request.url);
@@ -35,3 +36,5 @@ async function handleRequest(request) {
 //     });
 //   }
 // }
+=======
+>>>>>>> upstream/main

@@ -36,6 +36,7 @@
 > 在左侧的代码编辑器中，删除现有的所有代码，然后复制粘贴以下内容到代码编辑器：
 
 ```js
+<<<<<<< HEAD
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -49,6 +50,31 @@ export default {
     });
   }
 }
+=======
+const TELEGRAPH_URL = 'https://api.openai.com';
+
+addEventListener('fetch', event => {
+  event.respondWith(handleRequest(event.request))
+})
+
+async function handleRequest(request) {
+  const url = new URL(request.url);
+  const headers_Origin = request.headers.get("Access-Control-Allow-Origin") || "*"
+  url.host = TELEGRAPH_URL.replace(/^https?:\/\//, '');
+  const modifiedRequest = new Request(url.toString(), {
+    headers: request.headers,
+    method: request.method,
+    body: request.body,
+    redirect: 'follow'
+  });
+  const response = await fetch(modifiedRequest);
+  const modifiedResponse = new Response(response.body, response);
+  // 添加允许跨域访问的响应头
+  modifiedResponse.headers.set('Access-Control-Allow-Origin', headers_Origin);
+  return modifiedResponse;
+}
+
+>>>>>>> upstream/main
 ```
 
 
@@ -162,4 +188,8 @@ curl --location 'https://openai.1rmb.tk/dashboard/billing/credit_grants' \
 
 ### 查询 OPENAI API 余额
 
+<<<<<<< HEAD
 [https://checkbilling.1rmb.tk/](https://checkbilling.1rmb.tk/)
+=======
+[https://checkbilling.1rmb.tk/](https://checkbilling.1rmb.tk/)
+>>>>>>> upstream/main

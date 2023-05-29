@@ -1,14 +1,30 @@
 
+<<<<<<< HEAD
+=======
+>  新项目 [基于OpenAI的微信机器人](https://github.com/x-dr/wechat-bot)
+
+>>>>>>> upstream/main
 ### Demo
 
 [https://chatai.1rmb.tk](https://chatai.1rmb.tk)
 
 > api
+<<<<<<< HEAD
 ```url
 https://openai.1rmb.tk
 ```
 
 或
+=======
+
+```url
+https://openai.451024.xyz
+```
+
+```url
+https://openai.1rmb.tk
+```
+>>>>>>> upstream/main
 
 ```url
 https://openai-proxy-api.pages.dev/api
